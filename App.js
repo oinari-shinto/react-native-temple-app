@@ -11,8 +11,8 @@ export default function App() {
       <StatusBar style="auto" />a
       <Button title="Change text" onPress={() => setOutputText('The text changed!')}/>
       <View >
-        <TextInput placeholder="Temple name"/>
-        <Button title='Add'/>
+        <TextInput placeholder="Temple name" style={{borderBottomColor: 'black', borderBottomWidth: 1}}/>
+        <Button title='ADD'/>
 
       </View>
       <View></View>
@@ -26,5 +26,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  insideContainer: {
+    padding: 20,
+
+
   },
 });
