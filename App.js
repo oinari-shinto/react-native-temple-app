@@ -10,8 +10,8 @@ export default function App() {
       <Text>{outputText}</Text>
       <StatusBar style="auto" />a
       <Button title="Change text" onPress={() => setOutputText('The text changed!')}/>
-      <View >
-        <TextInput placeholder="Temple name" style={{borderBottomColor: 'black', borderBottomWidth: 1}}/>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+        <TextInput placeholder="Temple name" style={{ width: '80%', borderBottomColor: 'black', borderBottomWidth: 1}}/>
         <Button title='ADD'/>
 
       </View>
