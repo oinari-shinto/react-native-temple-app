@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function App() {
-  const [outputText, setOutputText] = useState(' Up App.js to start working on your app!');
+  const [outputText, setOutputText] = useState('Japanese temple map');
   return (
     <View style={styles.container}>
       
