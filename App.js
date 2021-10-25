@@ -10,8 +10,8 @@ export default function App() {
       <Text>{outputText}</Text>
       <StatusBar style="auto" />
       <Button title="Change text" onPress={() => setOutputText('The text changed!')}/>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-        <TextInput placeholder="Temple name" style={{ width: '80%', borderBottomColor: 'black', borderBottomWidth: 1}}/>
+      <View style={styles.insideContainer}>
+        <TextInput placeholder="Temple name" style={styles.input}/>
         <Button title='ADD'/>
 
       </View>
@@ -27,9 +27,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  /* insideContainer: {
-    padding: 20,
-
-
-  } */
+  insideContainer: {
+    padding: 50,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  input: {
+    width: '80%',
+    borderBottomColor: 'black',
+    borderBottomWidth: 1
+  }
 });
