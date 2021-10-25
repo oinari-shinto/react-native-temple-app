@@ -8,7 +8,7 @@ export default function App() {
     <View style={styles.container}>
       
       <Text>{outputText}</Text>
-      <StatusBar style="auto" />a
+      <StatusBar style="auto" />
       <Button title="Change text" onPress={() => setOutputText('The text changed!')}/>
       <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
         <TextInput placeholder="Temple name" style={{ width: '80%', borderBottomColor: 'black', borderBottomWidth: 1}}/>
@@ -27,9 +27,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  insideContainer: {
+  /* insideContainer: {
     padding: 20,
 
 
-  },
+  } */
 });
