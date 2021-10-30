@@ -3,28 +3,31 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function App() {
-  const [enteredGoal, setEnteredGoal] = useState('Japanese temple map');
+  const [enteredShrine, setEnteredShrine] = useState('Japanese Shrine map');
+  const [course] = useState([]);
 
-  const goalInputHandler = (enteredText) => {
-    setEnteredGoal(enteredText);
+  const shrineInputHandler = (enteredText) => {
+    setEnteredShrine(enteredText);
   };
 
-  const addGoalHandler = () => {
-    console.log(enteredGoal);
+  const addShrineHandler = () => {
+    console.log(enteredShrine);
   };
 
   return (
     <View style={styles.container}>
       
-      <Text>{enteredGoal}</Text>
+      <Text>{enteredShrine}</Text>
       <StatusBar style="auto" />
-      <Button title="Change text" onPress={() => setEnteredGoal('The text changed!')}/>
+      <Button title="Change text" onPress={() => setEnteredShrine('The text changed!')}/>
       <View style={styles.insideContainer}>
-        <TextInput placeholder="Temple name" style={styles.input} onChangeText={goalInputHandler} value={enteredGoal}/>
-        <Button title='ADD' onPress={addGoalHandler}/>
+        <TextInput placeholder="Shrine name" style={styles.input} onChangeText={shrineInputHandler} value={enteredShrine}/>
+        <Button title='ADD' onPress={addShrineHandler}/>
 
       </View>
-      <View></View>
+      <View>
+
+      </View>
     </View>
   );
 }
