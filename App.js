@@ -3,16 +3,25 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function App() {
-  const [outputText, setOutputText] = useState('Japanese temple map');
+  const [enteredGoal, setEnteredGoal] = useState('Japanese temple map');
+
+  const goalInputHandler = (enteredText) => {
+    setEnteredGoal(enteredText);
+  };
+
+  const addGoalHandler = () => {
+    console.log(enteredGoal);
+  };
+
   return (
     <View style={styles.container}>
       
-      <Text>{outputText}</Text>
+      <Text>{enteredGoal}</Text>
       <StatusBar style="auto" />
-      <Button title="Change text" onPress={() => setOutputText('The text changed!')}/>
+      <Button title="Change text" onPress={() => setEnteredGoal('The text changed!')}/>
       <View style={styles.insideContainer}>
-        <TextInput placeholder="Temple name" style={styles.input}/>
-        <Button title='ADD'/>
+        <TextInput placeholder="Temple name" style={styles.input} onChangeText={goalInputHandler} value={enteredGoal}/>
+        <Button title='ADD' onPress={addGoalHandler}/>
 
       </View>
       <View></View>
