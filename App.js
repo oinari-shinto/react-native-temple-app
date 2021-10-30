@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function App() {
   const [enteredShrine, setEnteredShrine] = useState('Japanese Shrine map');
-  const [course] = useState([]);
+  /* const [course] = useState([]); */
 
   const shrineInputHandler = (enteredText) => {
     setEnteredShrine(enteredText);
