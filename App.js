@@ -4,14 +4,14 @@ import { Button, StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function App() {
   const [enteredShrine, setEnteredShrine] = useState('Japanese Shrine map');
-  /* const [course] = useState([]); */
+  const [courseShrines, setCourseShrines] = useState([]);
 
   const shrineInputHandler = (enteredText) => {
     setEnteredShrine(enteredText);
   };
 
   const addShrineHandler = () => {
-    console.log(enteredShrine);
+    setCourseShrines(currentShrines => [...currentShrines, enteredShrine]);
   };
 
   return (
@@ -26,7 +26,7 @@ export default function App() {
 
       </View>
       <View>
-
+        {courseShrines.map((shrine) => <Text key={shrine}>{shrine}</Text>)}
       </View>
     </View>
   );
