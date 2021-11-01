@@ -26,7 +26,7 @@ export default function App() {
 
       </View>
       <View>
-        {courseShrines.map((shrine) => <Text key={shrine}>{shrine}</Text>)}
+        {courseShrines.map((shrine) => <View key={shrine} style={styles.listItem}><Text>{shrine}</Text></View>)}
       </View>
     </View>
   );
@@ -49,5 +49,12 @@ const styles = StyleSheet.create({
     width: '80%',
     borderBottomColor: 'black',
     borderBottomWidth: 1
+  },
+  listItem: {
+    padding: 10,
+    marginVertical: 5,
+    backgroundColor: '#ccc',
+    borderColor: 'black',
+    borderWidth: 1,
   }
 });
