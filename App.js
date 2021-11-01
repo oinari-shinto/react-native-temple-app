@@ -26,7 +26,7 @@ export default function App() {
 
       </View>
       <FlatList data={courseShrines} renderItem={itemData => <View style={styles.listItem}><Text>{itemData.item.value}</Text></View>} />
-        {courseShrines.map((shrine) => )}
+        
       
     </View>
   );
