@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Button, StyleSheet, Text, View, TextInput, ScrollView } from 'react-native';
+import { Button, StyleSheet, Text, View, TextInput, ScrollView, FlatList } from 'react-native';
 
 export default function App() {
   const [enteredShrine, setEnteredShrine] = useState('Japanese Shrine map');
@@ -9,9 +9,9 @@ export default function App() {
   const shrineInputHandler = (enteredText) => {
     setEnteredShrine(enteredText);
   };
-
+  //create here key in the object because FlatList need it
   const addShrineHandler = () => {
-    setCourseShrines(currentShrines => [...currentShrines, enteredShrine]);
+    setCourseShrines(currentShrines => [...currentShrines, { key: Math.random().toString(), value: enteredShrine}]);
   };
 
   return (
@@ -25,9 +25,9 @@ export default function App() {
         <Button title='ADD' onPress={addShrineHandler}/>
 
       </View>
-      <ScrollView>
-        {courseShrines.map((shrine) => <View key={shrine} style={styles.listItem}><Text>{shrine}</Text></View>)}
-      </ScrollView>
+      <FlatList data={courseShrines} renderItem={itemData => <View style={styles.listItem}><Text>{itemData.item.value}</Text></View>} />
+        {courseShrines.map((shrine) => )}
+      
     </View>
   );
 }
