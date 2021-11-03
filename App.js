@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View, TextInput, ScrollView, FlatList } from 'react-native';
+import ShrineItem from './components/ShrineItem';
 
 export default function App() {
   const [enteredShrine, setEnteredShrine] = useState('Japanese Shrine map');
@@ -25,7 +26,7 @@ export default function App() {
         <Button title='ADD' onPress={addShrineHandler}/>
 
       </View>
-      <FlatList data={courseShrines} renderItem={itemData => <View style={styles.listItem}><Text>{itemData.item.value}</Text></View>} />
+      <FlatList data={courseShrines} renderItem={itemData => <ShrineItem title={itemData.item.value} />} />
         
       
     </View>
@@ -50,11 +51,5 @@ const styles = StyleSheet.create({
     borderBottomColor: 'black',
     borderBottomWidth: 1
   },
-  listItem: {
-    padding: 10,
-    marginVertical: 5,
-    backgroundColor: '#ccc',
-    borderColor: 'black',
-    borderWidth: 1,
-  }
+  
 });
