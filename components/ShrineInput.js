@@ -10,20 +10,24 @@ const ShrineInput = (props) => {
       };
       
     return (
+       
         <View style={styles.container}>
         <Text>{enteredShrine}</Text>
         <Button title="Change text" onPress={() => setEnteredShrine('The text changed!')}/>
+        
         <View style={styles.insideContainer}>
         <TextInput placeholder="Shrine name" style={styles.input} onChangeText={shrineInputHandler} value={enteredShrine}/>
         <Button title='ADD' onPress={props.onAddShrine.bind(this, enteredShrine)} />
         </View>
         </View>
-    )
-};
+        
+    )};
 
 const styles = StyleSheet.create({
+  
     container: {
-        flex: 1,
+        padding: 10,
+       
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',

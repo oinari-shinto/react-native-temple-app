@@ -23,7 +23,7 @@ export default function App() {
       <ShrineInput onAddShrine={addShrineHandler}/>
 
       
-      <FlatList data={courseShrines} renderItem={itemData => <ShrineItem title={itemData.item.value} />} />
+      <FlatList data={courseShrines} renderItem={itemData => <ShrineItem onDelete={() => console.log('Torch')} title={itemData.item.value} />} />
         
       
     </View>
