@@ -12,13 +12,19 @@ export default function App() {
   //create here key in the object because FlatList need it
   const addShrineHandler = (shrineTitle) => {
     setCourseShrines(currentShrines => [...currentShrines, { id: Math.random().toString(), value: shrineTitle}]);
+    setIsAddMode(false);
   };
 
   const removeShrineHandler = shrineId => {
     setCourseShrines(currentShrines => {
       return currentShrines.filter((shrine) => shrine.id !== shrineId);
     });
-  }
+    
+  };
+
+  const stopAddShrineHandler = () => {
+    setIsAddMode(false);
+  };
 
   return (
     <View style={styles.screen}>
@@ -26,7 +32,7 @@ export default function App() {
       <Button title={'Add New Shrine'} onPress={() => setIsAddMode(true)}/>
       <StatusBar style="auto" />
       
-      <ShrineInput visible={isAddMode} onAddShrine={addShrineHandler}/>  
+      <ShrineInput visible={isAddMode} onAddShrine={addShrineHandler} onCancel={stopAddShrineHandler}/>  
 
       <FlatList data={courseShrines} renderItem={itemData => <ShrineItem id={itemData.item.id} onDelete={removeShrineHandler} title={itemData.item.value} />} />
         
