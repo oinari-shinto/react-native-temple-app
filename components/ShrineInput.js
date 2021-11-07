@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Text, TextInput, View, StyleSheet  } from "react-native";
+import { Button, Text, TextInput, View, StyleSheet, Modal  } from "react-native";
 
 const ShrineInput = (props) => {
     const [enteredShrine, setEnteredShrine] = useState('Japanese Shrine map');
@@ -10,7 +10,7 @@ const ShrineInput = (props) => {
       };
       
     return (
-       
+       <Modal visible={props.visible} animationType="slide">
         <View style={styles.container}>
         <Text>{enteredShrine}</Text>
         <Button title="Change text" onPress={() => setEnteredShrine('The text changed!')}/>
@@ -20,7 +20,7 @@ const ShrineInput = (props) => {
         <Button title='ADD' onPress={props.onAddShrine.bind(this, enteredShrine)} />
         </View>
         </View>
-        
+      </Modal>
     )};
 
 const styles = StyleSheet.create({
