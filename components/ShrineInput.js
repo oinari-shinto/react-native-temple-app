@@ -11,9 +11,7 @@ const ShrineInput = (props) => {
       
     return (
        <Modal visible={props.visible} animationType="slide">
-        {/* <View style={styles.container}>
-        <Text>{enteredShrine}</Text>
-        <Button title="Change text" onPress={() => setEnteredShrine('The text changed!')}/> */}
+        
         
         <View style={styles.insideContainer}>
         <TextInput placeholder="Shrine name" style={styles.input} onChangeText={shrineInputHandler} value={enteredShrine}/>
