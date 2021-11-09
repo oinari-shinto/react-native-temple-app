@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Button, StyleSheet, Text, View, TextInput, ScrollView, FlatList } from 'react-native';
+import { Button, StyleSheet, View, FlatList } from 'react-native';
 import ShrineItem from './components/ShrineItem';
 import ShrineInput from './components/ShrineInput';
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Text, TextInput, View, StyleSheet, Modal  } from "react-native";
+import { Button, TextInput, View, StyleSheet, Modal  } from "react-native";
 
 const ShrineInput = (props) => {
     const [enteredShrine, setEnteredShrine] = useState('Japanese Shrine map');
