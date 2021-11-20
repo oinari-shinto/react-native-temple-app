@@ -15,6 +15,7 @@ const ShrineInput = (props) => {
         
         <View style={styles.insideContainer}>
         <TextInput placeholder="Shrine name" style={styles.input} onChangeText={shrineInputHandler} value={enteredShrine}/>
+        <TextInput placeholder="Start Point" style={styles.input} onChangeText={shrineInputHandler} value={enteredShrine}/>
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
            <Button  title="Cancel" color="red" onPress={props.onCancel}/>
