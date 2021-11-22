@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, View, FlatList } from 'react-native';
 import ShrineItem from './components/ShrineItem';
 import ShrineInput from './components/ShrineInput';
+import Header from './components/Header';
 
 export default function App() {
   
@@ -28,7 +29,11 @@ export default function App() {
 
   return (
     <View style={styles.screen}>
-      
+      <View style={styles.screenHeader}>
+         <Header title="Guess a number" />
+      </View>
+
+
       <Button title={'Add New Shrine'} onPress={() => setIsAddMode(true)}/>
       <StatusBar style="auto" />
       
@@ -45,6 +50,8 @@ const styles = StyleSheet.create({
   screen: {
     padding: 50
   },
- 
+  screenHeader: {
+    flex: 1
+  }
   
 });
