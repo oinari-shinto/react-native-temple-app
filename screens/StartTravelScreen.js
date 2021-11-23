@@ -3,10 +3,10 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const StartTravelScreen = () => {
     return (
-        <View>
-
+        <View style={styles.screen}>
+            <Text>The Travel Screen</Text>
         </View>
-    )
+    );
 };
 
 const styles = StyleSheet.create({
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 10,
         alignItems: 'center',
-        
+
     }
 
 });

@@ -4,6 +4,7 @@ import { Button, StyleSheet, View, FlatList } from 'react-native';
 import ShrineItem from './components/ShrineItem';
 import ShrineInput from './components/ShrineInput';
 import Header from './components/Header';
+import StartTravelScreen from './screens/StartTravelScreen';
 
 export default function App() {
   
@@ -31,6 +32,7 @@ export default function App() {
     <View style={styles.screen}>
       <View style={styles.screenHeader}>
          <Header title="Guess a number" />
+         <StartTravelScreen />
       </View>
 
 
