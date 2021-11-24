@@ -1,10 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, _Text } from 'react-native';
 
 const StartTravelScreen = () => {
     return (
         <View style={styles.screen}>
             <Text>The Travel Screen</Text>
+            <View>
+                <Text>Select a way</Text>
+            </View>
         </View>
     );
 };
