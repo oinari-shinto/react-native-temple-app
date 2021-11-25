@@ -1,12 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet, _Text } from 'react-native';
+import { View, Text, StyleSheet, _Text, TextInput, Button } from 'react-native';
 
 const StartTravelScreen = () => {
     return (
         <View style={styles.screen}>
             <Text>The Travel Screen</Text>
             <View>
-                <Text>Select a way</Text>
+                <Text style={styles.title}>Select a way</Text>
+                <TextInput style={styles.inputContainer}/>
+                <View style={styles.buttonContainer}>
+                    <Button title="Reset" onPress={() => {}} />
+                    <Button title="Confirm" onPress={() => {}} />
+                </View>
             </View>
         </View>
     );
@@ -17,7 +22,22 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 10,
         alignItems: 'center',
+    },
+    title: {
+        fontSize: 20,
+        marginVertical: 10,
 
+    },
+    inputContainer: {
+        width: 300,
+        maxWidth: '80%',
+        alignItems: 'center',
+    },
+    buttonContainer: {
+        flexDirection: 'row',
+        width: '100%',
+        justifyContent: 'space-between',
+        paddingHorizontal: 15
     }
 
 });
