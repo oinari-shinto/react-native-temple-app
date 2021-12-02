@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, _Text, TextInput, Button } from 'react-native';
+import Colors from '../constans/colors';
 
 const StartTravelScreen = () => {
     return (
@@ -9,8 +10,8 @@ const StartTravelScreen = () => {
                 <Text style={styles.title}>Select a way</Text>
                 <TextInput style={styles.inputContainer}/>
                 <View style={styles.buttonContainer}>
-                    <View style={styles.button}><Button title="Reset" onPress={() => {}} color="#c717fc" /></View>
-                    <View style={styles.button}><Button title="Confirm" onPress={() => {}} color="#f7287b" /></View>
+                    <View style={styles.button}><Button title="Reset" onPress={() => {}} color={Colors.accent} /></View>
+                    <View style={styles.button}><Button title="Confirm" onPress={() => {}} color={Colors.primary} /></View>
                 </View>
             </View>
         </View>
