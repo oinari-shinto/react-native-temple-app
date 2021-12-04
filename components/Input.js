@@ -3,11 +3,10 @@ import { TextInput,StyleSheet } from 'react-native'
 
 const Input = (props) => {
     return (
-        <div>
-            
-        </div>
+        <TextInput />
     )
 }
 
+const styles = StyleSheet.create({});
 
 export default Input;
