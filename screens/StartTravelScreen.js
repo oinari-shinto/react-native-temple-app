@@ -1,19 +1,21 @@
 import React from 'react';
 import { View, Text, StyleSheet, _Text, TextInput, Button } from 'react-native';
-import Colors from '../constans/colors';
+import Colors from '../constants/colors';
+import Input from '../components/Input';
+import Card from '../components/Card';
 
 const StartTravelScreen = () => {
     return (
         <View style={styles.screen}>
             <Text>The Travel Screen</Text>
-            <View>
+            <Card style={style.inputContainer}>
                 <Text style={styles.title}>Select a way</Text>
-                <TextInput style={styles.inputContainer}/>
+                <TextInput />
                 <View style={styles.buttonContainer}>
                     <View style={styles.button}><Button title="Reset" onPress={() => {}} color={Colors.accent} /></View>
                     <View style={styles.button}><Button title="Confirm" onPress={() => {}} color={Colors.primary} /></View>
                 </View>
-            </View>
+            </Card>
         </View>
     );
 };
@@ -36,14 +38,6 @@ const styles = StyleSheet.create({
         width: 300,
         maxWidth: '80%',
         alignItems: 'center',
-        shadowColor: 'black',
-        shadowOffset: { width: 0, height: 2 },
-        shadowRadius: 6,
-        shadowOpacity: 0.26,
-        elevation: 5,
-        backgroundColor: 'white',
-        padding: 20,
-        borderRadius: 10
     },
     buttonContainer: {
         flexDirection: 'row',
