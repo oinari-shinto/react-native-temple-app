@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, _Text, TextInput, Button } from 'react-native';
+import { View, Text, StyleSheet, _Text, Button } from 'react-native';
 import Colors from '../constants/colors';
 import Input from '../components/Input';
 import Card from '../components/Card';
@@ -10,7 +10,7 @@ const StartTravelScreen = () => {
             <Text>The Travel Screen</Text>
             <Card style={style.inputContainer}>
                 <Text style={styles.title}>Select a way</Text>
-                <TextInput />
+                <Input style={styles.input} blurOnSubmit autoCapitalize='none' autoCorrect={false} keyboardType='default' maxLength={2} />
                 <View style={styles.buttonContainer}>
                     <View style={styles.button}><Button title="Reset" onPress={() => {}} color={Colors.accent} /></View>
                     <View style={styles.button}><Button title="Confirm" onPress={() => {}} color={Colors.primary} /></View>
@@ -33,6 +33,10 @@ const styles = StyleSheet.create({
     },
     button: {
         width: 100
+    },
+    input: {
+        width: 50,
+        textAlign: 'center',
     },
     inputContainer: {
         width: 300,
