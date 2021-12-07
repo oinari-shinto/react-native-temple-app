@@ -1,16 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Text, StyleSheet, _Text, Button } from 'react-native';
 import Colors from '../constants/colors';
 import Input from '../components/Input';
 import Card from '../components/Card';
 
+
+
+
 const StartTravelScreen = () => {
+
+    const [enterValue, setEnterValue] = useState('');
+
+    const nameInputHandler = inputText => {
+        setEnterValue(inputText.replace(/[^0-9]/g, ''));
+    };
+
     return (
         <View style={styles.screen}>
             <Text>The Travel Screen</Text>
             <Card style={style.inputContainer}>
                 <Text style={styles.title}>Select a way</Text>
-                <Input style={styles.input} blurOnSubmit autoCapitalize='none' autoCorrect={false} keyboardType='default' maxLength={2} />
+                <Input 
+                style={styles.input} 
+                blurOnSubmit 
+                autoCapitalize='none' 
+                autoCorrect={false} 
+                keyboardType='default' 
+                maxLength={2}
+                onChangeText={nameInputHandler}
+                value={enterValue}
+                />
                 <View style={styles.buttonContainer}>
                     <View style={styles.button}><Button title="Reset" onPress={() => {}} color={Colors.accent} /></View>
                     <View style={styles.button}><Button title="Confirm" onPress={() => {}} color={Colors.primary} /></View>
