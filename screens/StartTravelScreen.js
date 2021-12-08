@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet, _Text, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import Colors from '../constants/colors';
 import Input from '../components/Input';
 import Card from '../components/Card';
@@ -16,6 +16,9 @@ const StartTravelScreen = () => {
     };
 
     return (
+        <TouchableWithoutFeedback onPress={() => {
+            Keyboard.dismiss();
+        }}>
         <View style={styles.screen}>
             <Text>The Travel Screen</Text>
             <Card style={style.inputContainer}>
@@ -36,6 +39,7 @@ const StartTravelScreen = () => {
                 </View>
             </Card>
         </View>
+        </TouchableWithoutFeedback>
     );
 };
 
