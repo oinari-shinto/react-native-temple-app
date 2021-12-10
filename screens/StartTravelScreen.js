@@ -10,10 +10,33 @@ import Card from '../components/Card';
 const StartTravelScreen = () => {
 
     const [enterValue, setEnterValue] = useState('');
+    const [confirmed, setConfirmed] = useState(false);
+    const [selectedTemple, setSelectedTemple] = useState();
 
     const nameInputHandler = inputText => {
         setEnterValue(inputText.replace(/[^0-9]/g, ''));
     };
+
+    const resetInputHandler = () => {
+        setEnterValue('');
+        setConfirmed(false);
+    };
+
+    const confirmInputHandler = () => {
+            const chosenTemple = parseInt(enterValue);
+            if (chosenTemple === NaN || chosenTemple <= 0 || chosenTemple > 99 ) {
+                return; 
+            }
+        setConfirmed(true);
+        setSelectedTemple(chosen Temple);
+        setEnterValue('');
+    };
+
+    let confirmedOutput;
+
+    if (confirmed) {
+        confirmedOutput = <Text>Chosen Temple: {selectedTemple}</Text>
+    }
 
     return (
         <TouchableWithoutFeedback onPress={() => {
@@ -34,10 +57,11 @@ const StartTravelScreen = () => {
                 value={enterValue}
                 />
                 <View style={styles.buttonContainer}>
-                    <View style={styles.button}><Button title="Reset" onPress={() => {}} color={Colors.accent} /></View>
-                    <View style={styles.button}><Button title="Confirm" onPress={() => {}} color={Colors.primary} /></View>
+                    <View style={styles.button}><Button title="Reset" onPress={resetInputHandler} color={Colors.accent} /></View>
+                    <View style={styles.button}><Button title="Confirm" onPress={confirmInputHandler} color={Colors.primary} /></View>
                 </View>
             </Card>
+            {confirmedOutput}
         </View>
         </TouchableWithoutFeedback>
     );
