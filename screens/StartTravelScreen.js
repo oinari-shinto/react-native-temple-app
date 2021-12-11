@@ -1,5 +1,13 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet, Button, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { 
+    View, 
+    Text, 
+    StyleSheet, 
+    Button, 
+    TouchableWithoutFeedback, 
+    Keyboard,
+    Alert 
+} from 'react-native';
 import Colors from '../constants/colors';
 import Input from '../components/Input';
 import Card from '../components/Card';
@@ -24,11 +32,12 @@ const StartTravelScreen = () => {
 
     const confirmInputHandler = () => {
             const chosenTemple = parseInt(enterValue);
-            if (chosenTemple === NaN || chosenTemple <= 0 || chosenTemple > 99 ) {
+            if ( isNaN(chosenTemple) || chosenTemple <= 0 || chosenTemple > 99 ) {
+                Alert.alert('Invalid temple!', 'Please input name temple', [{text: 'Okay', style: 'destructive', onPress: resetInputHandler }])
                 return; 
             }
         setConfirmed(true);
-        setSelectedTemple(chosen Temple);
+        setSelectedTemple(chosenTemple);
         setEnterValue('');
     };
 
