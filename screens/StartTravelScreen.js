@@ -44,7 +44,11 @@ const StartTravelScreen = () => {
     let confirmedOutput;
 
     if (confirmed) {
-        confirmedOutput = <Text>Chosen Temple: {selectedTemple}</Text>
+        confirmedOutput = 
+        <Card>
+            <Text style={styles.summaryContainer}>Chosen Temple:</Text>
+            <View> {selectedTemple}</View>
+        </Card>
     }
 
     return (
@@ -53,7 +57,7 @@ const StartTravelScreen = () => {
         }}>
         <View style={styles.screen}>
             <Text>The Travel Screen</Text>
-            <Card style={style.inputContainer}>
+            <Card style={styles.inputContainer}>
                 <Text style={styles.title}>Select a way</Text>
                 <Input 
                 style={styles.input} 
@@ -104,6 +108,9 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'space-between',
         paddingHorizontal: 15
+    },
+    summaryContainer: {
+        marginTop: 20
     }
 
 });
