@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import Colors from '../constants/colors';
 import Input from '../components/Input';
+import TempleContainer from '../components/TempleContainer';
 import Card from '../components/Card';
 
 
@@ -39,6 +40,7 @@ const StartTravelScreen = () => {
         setConfirmed(true);
         setSelectedTemple(chosenTemple);
         setEnterValue('');
+        Keyboard.dismiss();
     };
 
     let confirmedOutput;
@@ -47,7 +49,8 @@ const StartTravelScreen = () => {
         confirmedOutput = 
         <Card>
             <Text style={styles.summaryContainer}>Chosen Temple:</Text>
-            <View> {selectedTemple}</View>
+            <TempleContainer>{selectedTemple}</TempleContainer>
+            <Button title='Start travel'/>
         </Card>
     }
 
@@ -110,7 +113,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15
     },
     summaryContainer: {
-        marginTop: 20
+        marginTop: 20,
+        alignItems: 'center',
     }
 
 });
