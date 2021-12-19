@@ -50,7 +50,7 @@ const StartTravelScreen = () => {
         <Card>
             <Text style={styles.summaryContainer}>Chosen Temple:</Text>
             <TempleContainer>{selectedTemple}</TempleContainer>
-            <Button title='Start travel'/>
+            <Button title='Start travel' onPress={() => onChooseTemple(selectedTemple)}/>
         </Card>
     }
 

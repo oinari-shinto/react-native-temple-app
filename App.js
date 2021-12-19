@@ -11,6 +11,7 @@ export default function App() {
   
   const [courseShrines, setCourseShrines] = useState([]);
   const [isAddMode, setIsAddMode] = useState(false);
+  const [userTemple, setUserTemple] = useState();
   
   //create here key in the object because FlatList need it
   const addShrineHandler = (shrineTitle) => {
@@ -29,12 +30,22 @@ export default function App() {
     setIsAddMode(false);
   };
 
+  const startTempleHandler = (selectedTemple) => {
+    setUserTemple(selectedTemple);
+  };
+
+  let content = <StartTravelScreen onChooseTemple={startTempleHandler}/>;
+
+  if (userTemple) {
+    content = <TempleScreen userChoice={userTemple}/>;
+  };
+
   return (
     <View style={styles.screen}>
       <View style={styles.screenHeader}>
          <Header title="Guess a number" />
-         <StartTravelScreen />
-         <TempleScreen />
+         {content}
+         
       </View>
 
 

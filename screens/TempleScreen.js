@@ -16,7 +16,7 @@ const generateRandomBetween = (min, max, exclude) => {
 
 const TempleScreen = (props) => {
     const [currentGuess, setCurrentGuess] = useState(
-        generateRandomBetween(1,100, props.userChoise)
+        generateRandomBetween(1,100, props.userChoice)
     );
     return (
         <View style={styles.screen}>
