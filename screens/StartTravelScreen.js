@@ -54,6 +54,8 @@ const StartTravelScreen = () => {
         </Card>
     }
 
+    
+
     return (
         <TouchableWithoutFeedback onPress={() => {
             Keyboard.dismiss();
