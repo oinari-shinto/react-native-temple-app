@@ -6,6 +6,7 @@ import ShrineInput from './components/ShrineInput';
 import Header from './components/Header';
 import StartTravelScreen from './screens/StartTravelScreen';
 import TempleScreen from './screens/TempleScreen';
+import OverTravelScreen from './screens/OverTravelScreen';
 
 export default function App() {
   
