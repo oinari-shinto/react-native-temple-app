@@ -21,6 +21,13 @@ const TempleScreen = (props) => {
     const currentLow = useRef(1);
     const currentHigh = useRef(100);
 
+    useEffect(() => {
+        if (currentGuess === props.userChoice)
+        return () => {
+            cleanup
+        }
+    }, [input]);
+
     const nextGuessHandler = direction => {
         if ((direction === 'lower' && currentGuess < props.userChoice) || 
         (direction === 'greater' && currentGuess > props.userChoice))
