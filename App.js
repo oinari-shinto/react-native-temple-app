@@ -34,6 +34,7 @@ export default function App() {
 
   const startTempleHandler = (selectedTemple) => {
     setUserTemple(selectedTemple);
+    setGuessTemples(0);
   };
 
   const travelOverHandler = numOfTemples => {
@@ -42,8 +43,10 @@ export default function App() {
 
   let content = <StartTravelScreen onChooseTemple={startTempleHandler}/>;
 
-  if (userTemple) {
+  if (userTemple && guessTemples <= 0) {
     content = <TempleScreen userChoice={userTemple} onTravelOver={travelOverHandler}/>;
+  } else if (guessTemples > 0) {
+    content = <OverTravelScreen />;
   };
 
   return (
