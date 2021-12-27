@@ -22,11 +22,13 @@ const TempleScreen = (props) => {
     const currentLow = useRef(1);
     const currentHigh = useRef(100);
 
+    const { userChoice, onTravelOver } = props;
+
     useEffect(() => {
-        if (currentGuess === props.userChoice) {
-            props.onTravelOver(rounds);
+        if (currentGuess === userChoice) {
+            onTravelOver(rounds);
         }
-    });
+    }, [currentGuess, userChoice, onTravelOver ]);
 
     const nextGuessHandler = direction => {
         if ((direction === 'lower' && currentGuess < props.userChoice) || 
