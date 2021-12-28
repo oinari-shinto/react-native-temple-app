@@ -6,6 +6,8 @@ const OverTravelScreen = () => {
     return (
         <View style={styles.screen}>
             <Text>The Travel is over!</Text>
+            <Text>Number of temples: {props.templeNumber}</Text>
+            <Text>Number was: {props.userTemples}</Text>
         </View>
     )
 };

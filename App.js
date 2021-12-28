@@ -46,7 +46,7 @@ export default function App() {
   if (userTemple && guessTemples <= 0) {
     content = <TempleScreen userChoice={userTemple} onTravelOver={travelOverHandler}/>;
   } else if (guessTemples > 0) {
-    content = <OverTravelScreen />;
+    content = <OverTravelScreen templeNumber={guessTemples} userTemple={userTemple}/>;
   };
 
   return (
