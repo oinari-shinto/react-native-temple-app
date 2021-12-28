@@ -14,6 +14,11 @@ export default function App() {
   const [isAddMode, setIsAddMode] = useState(false);
   const [userTemple, setUserTemple] = useState();
   const [guessTemples, setGuessTemples] = useState();
+
+  const configureNewTravelHandler = () => {
+    setGuessTemples(0);
+    setUserTemple(null);
+  };
   
   //create here key in the object because FlatList need it
   const addShrineHandler = (shrineTitle) => {
@@ -46,7 +51,7 @@ export default function App() {
   if (userTemple && guessTemples <= 0) {
     content = <TempleScreen userChoice={userTemple} onTravelOver={travelOverHandler}/>;
   } else if (guessTemples > 0) {
-    content = <OverTravelScreen templeNumber={guessTemples} userTemple={userTemple}/>;
+    content = <OverTravelScreen templeNumber={guessTemples} userTemple={userTemple} onRestart={configureNewTravelHandler}/>;
   };
 
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
 
 const OverTravelScreen = () => {
@@ -8,6 +8,7 @@ const OverTravelScreen = () => {
             <Text>The Travel is over!</Text>
             <Text>Number of temples: {props.templeNumber}</Text>
             <Text>Number was: {props.userTemples}</Text>
+            <Button title='NEW TRAVEL' onPress={props.onRestart}/>
         </View>
     )
 };
