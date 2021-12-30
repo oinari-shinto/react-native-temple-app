@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Button, StyleSheet, View, FlatList } from 'react-native';
 import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
 
 import ShrineItem from './components/ShrineItem';
 import ShrineInput from './components/ShrineInput';
@@ -10,12 +11,28 @@ import StartTravelScreen from './screens/StartTravelScreen';
 import TempleScreen from './screens/TempleScreen';
 import OverTravelScreen from './screens/OverTravelScreen';
 
+const fetchFonts = () => {
+  return Font.loadAsync({
+    'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
+    'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+  });
+};
+
 export default function App() {
   
   const [courseShrines, setCourseShrines] = useState([]);
   const [isAddMode, setIsAddMode] = useState(false);
   const [userTemple, setUserTemple] = useState();
   const [guessTemples, setGuessTemples] = useState();
+  const [dataLoaded, setDataLoaded] = useState(false);
+
+  if (!dataLoaded) {
+    return <AppLoading 
+    startAsync = {fetchFonts} 
+    onFinish={() => setDataLoaded(true)}
+    onError={() => console.log(err)}
+    />;
+  }
 
   const configureNewTravelHandler = () => {
     setGuessTemples(0);
