@@ -2,6 +2,7 @@ import React,  { useRef, useState } from 'react';
 import { View, Text, StyleSheet, Button, Alert } from 'react-native';
 
 import TempleContainer from '../components/TempleContainer';
+import DefaultStyles from '../constants/default-styles';
 
 const generateRandomBetween = (min, max, exclude) => {
     min = Math.ceil(min);
@@ -50,7 +51,7 @@ const TempleScreen = (props) => {
 
     return (
         <View style={styles.screen}>
-            <Text>Opponent's Guess</Text>
+            <Text style={DefaultStyles.title}>Opponent's Guess</Text>
             <TempleContainer>{currentGuess}</TempleContainer>
             <Card style={styles.buttonContainer}>
                 <Button title='LOWER' onPress={nextGuessHandler.bind(this, 'lower')}/>
