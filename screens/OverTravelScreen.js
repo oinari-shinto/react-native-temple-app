@@ -12,7 +12,7 @@ const OverTravelScreen = () => {
         </View>
     )
 };
-import { View, Text, StyleSheet } from 'react-native';
+
 
 const styles = StyleSheet.create({
     screen: {
