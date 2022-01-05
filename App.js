@@ -84,12 +84,12 @@ export default function App() {
       </View>
 
 
-      <Button title={'Add New Shrine'} onPress={() => setIsAddMode(true)}/>
+      {/* <Button title={'Add New Shrine'} onPress={() => setIsAddMode(true)}/> */}
       <StatusBar style="auto" />
       
-      <ShrineInput visible={isAddMode} onAddShrine={addShrineHandler} onCancel={stopAddShrineHandler}/>  
+      {/* <ShrineInput visible={isAddMode} onAddShrine={addShrineHandler} onCancel={stopAddShrineHandler}/>  */} 
 
-      <FlatList data={courseShrines} renderItem={itemData => <ShrineItem id={itemData.item.id} onDelete={removeShrineHandler} title={itemData.item.value} />} />
+      {/* <FlatList data={courseShrines} renderItem={itemData => <ShrineItem id={itemData.item.id} onDelete={removeShrineHandler} title={itemData.item.value} />} /> */}
         
       
     </View>
@@ -98,7 +98,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 50
+    flex: 1
   },
   screenHeader: {
     flex: 1
