@@ -70,11 +70,12 @@ export default function App() {
   let content = <StartTravelScreen onChooseTemple={startTempleHandler}/>;
 
   if (userTemple && guessTemples <= 0) {
-    content = <TempleScreen userChoice={userTemple} onTravelOver={travelOverHandler}/>;
-  } else if (guessTemples > 0) {
+    content = <TempleScreen userChoice={userTemple} />;
+  } /* else if (guessTemples > 0) { 
     content = <OverTravelScreen templeNumber={guessTemples} userTemple={userTemple} onRestart={configureNewTravelHandler}/>;
   };
-
+ */
+  /* onTravelOver={travelOverHandler} */
   return (
     <View style={styles.screen}>
       <View style={styles.screenHeader}>

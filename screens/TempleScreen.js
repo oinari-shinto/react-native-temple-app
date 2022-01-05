@@ -1,5 +1,6 @@
 import React,  { useRef, useState } from 'react';
 import { View, Text, StyleSheet, Button, Alert } from 'react-native';
+import Card from '../components/Card';
 
 import TempleContainer from '../components/TempleContainer';
 import DefaultStyles from '../constants/default-styles';
@@ -25,11 +26,11 @@ const TempleScreen = (props) => {
 
     const { userChoice, onTravelOver } = props;
 
-    useEffect(() => {
+   /*  useEffect(() => {
         if (currentGuess === userChoice) {
             onTravelOver(rounds);
         }
-    }, [currentGuess, userChoice, onTravelOver ]);
+    }, [currentGuess, userChoice, onTravelOver ]); */
 
     const nextGuessHandler = direction => {
         if ((direction === 'lower' && currentGuess < props.userChoice) || 

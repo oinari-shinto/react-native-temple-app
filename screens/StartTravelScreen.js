@@ -16,7 +16,7 @@ import Card from '../components/Card';
 
 
 
-const StartTravelScreen = () => {
+const StartTravelScreen = (props) => {
 
     const [enterValue, setEnterValue] = useState('');
     const [confirmed, setConfirmed] = useState(false);
