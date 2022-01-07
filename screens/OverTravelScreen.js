@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
 
-const OverTravelScreen = () => {
+const OverTravelScreen = (props) => {
     return (
         <View style={styles.screen}>
             <Text>The Travel is over!</Text>
