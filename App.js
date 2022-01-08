@@ -11,12 +11,12 @@ import StartTravelScreen from './screens/StartTravelScreen';
 import TempleScreen from './screens/TempleScreen';
 import OverTravelScreen from './screens/OverTravelScreen';
 
-/* const fetchFonts = () => {
+const fetchFonts = () => {
   return Font.loadAsync({
     'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
     'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
   });
-}; */
+};
 
 export default function App() {
   
@@ -29,12 +29,14 @@ export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
 
  /*  if (!dataLoaded) {
-    return <AppLoading 
+    return (
+    <AppLoading 
     startAsync = {fetchFonts} 
     onFinish={() => setDataLoaded(true)}
     onError={(err) => console.log(err)}
-    />;
-  } */
+    />
+    );
+  }; */
 
   const configureNewTravelHandler = () => {
     setGuessTemples(0);

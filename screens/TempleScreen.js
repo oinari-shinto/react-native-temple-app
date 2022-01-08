@@ -52,7 +52,7 @@ const TempleScreen = (props) => {
 
     return (
         <View style={styles.screen}>
-            <Text style={DefaultStyles.title}>Opponent's Guess</Text>
+            <Text style={DefaultStyles.bodyText}>Opponent's Guess</Text>
             <TempleContainer>{currentGuess}</TempleContainer>
             <Card style={styles.buttonContainer}>
                 <Button title='LOWER' onPress={nextGuessHandler.bind(this, 'lower')}/>
