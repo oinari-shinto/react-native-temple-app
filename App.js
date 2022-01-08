@@ -2,7 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Button, StyleSheet, View, FlatList } from 'react-native';
 import * as Font from 'expo-font';
-import { AppLoading } from 'expo';
+
+import AppLoading from 'expo-app-loading';
 
 import ShrineItem from './components/ShrineItem';
 import ShrineInput from './components/ShrineInput';
@@ -28,7 +29,7 @@ export default function App() {
   const [guessTemples, setGuessTemples] = useState(0);
   const [dataLoaded, setDataLoaded] = useState(false);
 
- /*  if (!dataLoaded) {
+  if (!dataLoaded) {
     return (
     <AppLoading 
     startAsync = {fetchFonts} 
@@ -36,7 +37,7 @@ export default function App() {
     onError={(err) => console.log(err)}
     />
     );
-  }; */
+  };
 
   const configureNewTravelHandler = () => {
     setGuessTemples(0);
