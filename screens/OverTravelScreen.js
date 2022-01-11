@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button, Image } from 'react-native';
 import DefaultStyles from '../constants/default-styles';
+import Colors from '../constants/colors';
 
 const OverTravelScreen = (props) => {
     return (
@@ -12,9 +13,12 @@ const OverTravelScreen = (props) => {
                     style={styles.image}
                     resizeMode='cover'/>
             </View>
-            <Text style={DefaultStyles.bodyText}>Number of temples: {props.templeNumber}</Text>
-            <Text style={DefaultStyles.bodyText} >Number was: {props.userTemples}</Text>
-            <Button title='NEW TRAVEL' onPress={props.onRestart}/>
+            <View style={styles.resultContainer}>
+                <Text style={DefaultStyles.bodyText}>Number of temples: <Text style={styles.highlight}>{props.templeNumber}</Text></Text>
+                <Text style={DefaultStyles.bodyText} >Number was: <Text style={styles.highlight}>{props.userTemples}</Text></Text>
+                <Button title='NEW TRAVEL' onPress={props.onRestart}/>
+            </View>
+            
         </View>
     )
 };
@@ -38,6 +42,15 @@ const styles = StyleSheet.create({
     image: {
         width: '100%',
         height: '100%'
+    },
+    highlight: {
+        color: Colors.primary,
+        fontFamily: 'open-sans-bolt',
+        textAlign: 'center'
+    },
+    resultContainer: {
+        marginHorizontal: 30,
+        marginVertical: 15
     }
 });
 export default OverTravelScreen
