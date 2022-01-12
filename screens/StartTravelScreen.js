@@ -12,7 +12,7 @@ import Colors from '../constants/colors';
 import Input from '../components/Input';
 import TempleContainer from '../components/TempleContainer';
 import Card from '../components/Card';
-
+import MainButton from '../components/MainButton';
 
 
 
@@ -50,7 +50,7 @@ const StartTravelScreen = (props) => {
         <Card>
             <Text style={styles.summaryContainer}>Chosen Temple:</Text>
             <TempleContainer>{selectedTemple}</TempleContainer>
-            <Button title='Start travel' onPress={() => props.onChooseTemple(selectedTemple)}/>
+            <MainButton onPress={() => props.onChooseTemple(selectedTemple)}>Start travel</MainButton>
         </Card>
     }
 

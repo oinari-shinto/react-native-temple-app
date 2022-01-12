@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Button, Image } from 'react-native';
 import DefaultStyles from '../constants/default-styles';
 import Colors from '../constants/colors';
+import MainButton from '../components/MainButton';
 
 const OverTravelScreen = (props) => {
     return (
@@ -16,7 +17,7 @@ const OverTravelScreen = (props) => {
             <View style={styles.resultContainer}>
                 <Text style={DefaultStyles.bodyText}>Number of temples: <Text style={styles.highlight}>{props.templeNumber}</Text></Text>
                 <Text style={DefaultStyles.bodyText} >Number was: <Text style={styles.highlight}>{props.userTemples}</Text></Text>
-                <Button title='NEW TRAVEL' onPress={props.onRestart}/>
+                <MainButton  onPress={props.onRestart}>NEW TRAVEL</MainButton>
             </View>
             
         </View>
