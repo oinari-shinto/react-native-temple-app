@@ -1,7 +1,8 @@
 import React,  { useEffect, useRef, useState } from 'react';
 import { View, Text, StyleSheet, Button, Alert } from 'react-native';
-import Card from '../components/Card';
+import { Ionicons } from '@expo/vector-icons';
 
+import Card from '../components/Card';
 import TempleContainer from '../components/TempleContainer';
 import DefaultStyles from '../constants/default-styles';
 import MainButton from '../components/MainButton';
@@ -57,8 +58,12 @@ const TempleScreen = (props) => {
             <Text style={DefaultStyles.bodyText}>Opponent's Guess</Text>
             <TempleContainer>{currentGuess}</TempleContainer>
             <Card style={styles.buttonContainer}>
-                <MainButton  onPress={nextGuessHandler.bind(this, 'lower')}>LOWER</MainButton>
-                <MainButton  onPress={nextGuessHandler.bind(this, 'greater')}>GREATER</MainButton>
+                <MainButton  onPress={nextGuessHandler.bind(this, 'lower')}>
+                <Ionicons name='md-remove' size={24} color="white"/>
+                </MainButton>
+                <MainButton  onPress={nextGuessHandler.bind(this, 'greater')}>
+                <Ionicons name='md-add' size={24} color="white"/>
+                </MainButton>
             </Card>
         </View>
     )
