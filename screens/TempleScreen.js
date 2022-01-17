@@ -6,6 +6,8 @@ import Card from '../components/Card';
 import TempleContainer from '../components/TempleContainer';
 import DefaultStyles from '../constants/default-styles';
 import MainButton from '../components/MainButton';
+import DefaultStyles from '../constants/default-styles';
+
 
 
 const generateRandomBetween = (min, max, exclude) => {
@@ -19,8 +21,10 @@ const generateRandomBetween = (min, max, exclude) => {
     }
 };
 
-const renderList = (value) => (<View key={value}>
-<Text>{value}</Text>
+const renderList = (value, numOfRound) => (
+<View key={value} style={styles.listItem}>
+<Text style={DefaultStyles.bodyText}>#{numOfRound}</Text>
+<Text style={DefaultStyles.bodyText}>{value}</Text>
 </View>);
 
 const TempleScreen = (props) => {
@@ -69,9 +73,12 @@ const TempleScreen = (props) => {
                 <Ionicons name='md-add' size={24} color="white"/>
                 </MainButton>
             </Card>
-            <ScrollView>
-                {pastGuesses.map(guess => renderList(guess))}
-            </ScrollView>
+            <View style={styles.item}>
+                <ScrollView>
+                    {pastGuesses.map((guess, index) => renderList(guess, pastGuesses.length - index))}
+                </ScrollView>
+            </View>
+           
         </View>
     )
 }
@@ -88,6 +95,19 @@ const styles = StyleSheet.create({
         marginTop: 20,
         width: 400,
         maxWidth: '90%'
+    },
+    item: {
+        flex: 1,
+        width: '80%'
+    },
+    listItem: {
+        borderColor: '#ccc',
+        borderWidth: 1,
+        padding: 15,
+        marginVertical: 10,
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        justifyContent: 'space-around'
     }
 });
 
