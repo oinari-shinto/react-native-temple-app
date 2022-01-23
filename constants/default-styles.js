@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 
 export default StyleSheet.create({
@@ -7,6 +7,6 @@ export default StyleSheet.create({
     },
     title: {
         fontFamily: 'open-sans-bold',
-        fontSize: 18
+        fontSize: Dimensions.get('window').height < 400 ? 16 : 20
     }
 });
