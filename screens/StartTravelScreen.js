@@ -7,7 +7,9 @@ import {
     TouchableWithoutFeedback, 
     Keyboard,
     Alert,
-    Dimension 
+    Dimension,
+    ScrollView,
+    KeyboardAvoidingView 
 } from 'react-native';
 import Colors from '../constants/colors';
 import Input from '../components/Input';
@@ -58,6 +60,8 @@ const StartTravelScreen = (props) => {
     
 
     return (
+        <ScrollView>
+        <KeyboardAvoidingView behavior='position' keyboardVerticalOffset={30}>
         <TouchableWithoutFeedback onPress={() => {
             Keyboard.dismiss();
         }}>
@@ -83,6 +87,8 @@ const StartTravelScreen = (props) => {
             {confirmedOutput}
         </View>
         </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
+        </ScrollView>
     );
 };
 
