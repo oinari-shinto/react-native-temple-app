@@ -61,6 +61,31 @@ const TempleScreen = (props) => {
         setPastGuesses(curPastGuesses => [nextNumber, ...curPastGuesses]);
     };
 
+    if (Dimensions.get('window').height < 500) {
+        return (
+        <View style={styles.screen}>
+            <Text style={DefaultStyles.bodyText}>Opponent's Guess</Text>
+            <View style={styles.controls}>
+                <MainButton  onPress={nextGuessHandler.bind(this, 'lower')}>
+                    <Ionicons name='md-remove' size={24} color="white"/>
+                </MainButton>
+                <TempleContainer>{currentGuess}</TempleContainer>
+                <MainButton  onPress={nextGuessHandler.bind(this, 'greater')}>
+                    <Ionicons name='md-add' size={24} color="white"/>
+                </MainButton>
+            </View>
+                
+            
+            <View style={styles.listContainer}>
+                <ScrollView contentContainerStyle={styles.list}>
+                    {pastGuesses.map((guess, index) => renderList(guess, pastGuesses.length - index))}
+                </ScrollView>
+            </View>
+           
+        </View>
+        );
+    };
+
     return (
         <View style={styles.screen}>
             <Text style={DefaultStyles.bodyText}>Opponent's Guess</Text>
@@ -96,6 +121,12 @@ const styles = StyleSheet.create({
         marginTop: Dimensions.get('window').height > 600 ? 20 : 5,
         width: 400,
         maxWidth: '90%'
+    },
+    controls: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        width: '80%'
     },
     listContainer: {
         flex: 1,
