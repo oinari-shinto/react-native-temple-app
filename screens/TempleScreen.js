@@ -21,6 +21,7 @@ const generateRandomBetween = (min, max, exclude) => {
     }
 };
 
+
 const renderList = (value, numOfRound) => (
 <View key={value} style={styles.listItem}>
 <Text style={DefaultStyles.bodyText}>#{numOfRound}</Text>
@@ -31,10 +32,26 @@ const TempleScreen = (props) => {
     const initialGuess = generateRandomBetween(1,100, props.userChoice);
     const [currentGuess, setCurrentGuess] = useState(initialGuess);
     const [pastGuesses, setPastGuesses] = useState([initialGuess]);
+    const [ availableDeviceWidth, setAvailableDeviceWidth ] = useState(Dimensions.get('window').width);
+    const [ availableDeviceHeight, setAvailableDeviceHeight ] = useState(Dimensions.get('window').height);
     const currentLow = useRef(1);
     const currentHigh = useRef(100);
 
     const { userChoice, onTravelOver } = props;
+
+    useEffect(() => {
+        const updateLayout = () => {
+            setAvailableDeviceWidth(Dimensions.get('window').width);
+            setAvailableDeviceHeight(Dimensions.get('window').height);
+        };
+
+        Dimensions.addEventListener('change', updateLayout)
+
+        return () => {
+            Dimensions.removeEventListener('change', updateLayout);
+        };
+    });
+
 
     useEffect(() => {
         if (currentGuess === userChoice) {
@@ -61,7 +78,7 @@ const TempleScreen = (props) => {
         setPastGuesses(curPastGuesses => [nextNumber, ...curPastGuesses]);
     };
 
-    if (Dimensions.get('window').height < 500) {
+    if (availableDeviceHeight < 500) {
         return (
         <View style={styles.screen}>
             <Text style={DefaultStyles.bodyText}>Opponent's Guess</Text>
