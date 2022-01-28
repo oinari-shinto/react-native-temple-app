@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
     screen: {
         flex: 1,
         justifyContent: 'center',
-        alignContent: 'center'
+        alignContent: 'center',
+        paddingVertical: 10
     },
     imageContainer: {
         //width: 300,
