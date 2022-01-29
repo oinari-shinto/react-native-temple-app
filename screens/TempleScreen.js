@@ -7,7 +7,7 @@ import TempleContainer from '../components/TempleContainer';
 import DefaultStyles from '../constants/default-styles';
 import MainButton from '../components/MainButton';
 import DefaultStyles from '../constants/default-styles';
-
+import { ScreenOrientation } from 'expo';
 
 
 const generateRandomBetween = (min, max, exclude) => {
@@ -29,6 +29,9 @@ const renderList = (value, numOfRound) => (
 </View>);
 
 const TempleScreen = (props) => {
+
+    //ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+    
     const initialGuess = generateRandomBetween(1,100, props.userChoice);
     const [currentGuess, setCurrentGuess] = useState(initialGuess);
     const [pastGuesses, setPastGuesses] = useState([initialGuess]);
