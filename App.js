@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Button, StyleSheet, View, FlatList } from 'react-native';
+import { Button, StyleSheet, View, FlatList, SafeAreaView } from 'react-native';
 import * as Font from 'expo-font';
 
 import AppLoading from 'expo-app-loading';
@@ -83,12 +83,13 @@ export default function App() {
 
 
   return (
-    <View style={styles.screen}>
+    <SafeAreaView style={styles.screen}>
+    <View>
       <View style={styles.screenHeader}>
          <Header title="Guess a number" />
          {content}
          
-      </View>
+      </View> 
 
 
       {/* <Button title={'Add New Shrine'} onPress={() => setIsAddMode(true)}/> */}
@@ -100,6 +101,7 @@ export default function App() {
         
       
     </View>
+    </SafeAreaView>
   );
 }
 

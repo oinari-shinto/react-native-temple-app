@@ -1,11 +1,20 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, Image, Dimensions, ScrollView } from 'react-native';
+import { 
+    View,
+    Text,
+     StyleSheet,
+    Button,
+    Image,
+    Dimensions,
+    ScrollView
+ } from 'react-native';
 import DefaultStyles from '../constants/default-styles';
 import Colors from '../constants/colors';
 import MainButton from '../components/MainButton';
 
 const OverTravelScreen = (props) => {
     return (
+        
         <ScrollView>
         <View style={styles.screen}>
             <Text style={DefaultStyles.title}>The Travel is over!</Text>
@@ -22,6 +31,7 @@ const OverTravelScreen = (props) => {
             </View>
         </View>
         </ScrollView>
+        
     )
 };
 
