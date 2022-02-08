@@ -89,17 +89,8 @@ export default function App() {
          <Header title="Guess a number" />
          {content}
          
-      </View> 
-
-
-      {/* <Button title={'Add New Shrine'} onPress={() => setIsAddMode(true)}/> */}
-      <StatusBar style="auto" />
-      
-      {/* <ShrineInput visible={isAddMode} onAddShrine={addShrineHandler} onCancel={stopAddShrineHandler}/>  */} 
-
-      {/* <FlatList data={courseShrines} renderItem={itemData => <ShrineItem id={itemData.item.id} onDelete={removeShrineHandler} title={itemData.item.value} />} /> */}
-        
-      
+      </View>  
+      <StatusBar style="auto" /> 
     </View>
     </SafeAreaView>
   );
